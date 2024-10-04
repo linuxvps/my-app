@@ -9,7 +9,7 @@ RUN npx ngcc --properties es2023 browser module main --first-only -create-ivy-en
 
 COPY . .
 
-RUN npm build
+RUN npm run build
 
 FROM nginx:stable
 
