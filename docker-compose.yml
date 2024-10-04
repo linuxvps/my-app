@@ -1,0 +1,17 @@
+services:
+  my-app:
+    container_name: myappcontainer
+    build: .
+    image: myappimage:v1
+    ports:
+      - "80:80"
+    expose:
+      - 80
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge
+
+
