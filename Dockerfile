@@ -6,6 +6,6 @@ RUN npx ngcc --properties es2023 browser module main --first-only -create-ivy-en
 COPY . .
 RUN npm run build
 FROM nginx:stable
-COPY --from=build /app/dist/my-app/ /usr/share/nginx/html
+COPY --from=build /app/dist/my-app/browser /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
