@@ -1,6 +1,7 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // Add this import
-import { CommonModule } from '@angular/common';
+import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {FormsModule} from '@angular/forms'; // Add this import
+import {CommonModule} from '@angular/common';
+import {PredictionService} from '../../service/prediction/prediction.service';
 
 @Component({
   selector: 'app-prediction-view',
@@ -11,6 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class PredictionViewComponent implements OnInit, AfterViewInit {
 
+  constructor(private predictionService: PredictionService) {
+  }
+
   ngOnInit(): void {
 
   }
@@ -18,6 +22,8 @@ export class PredictionViewComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
 
   }
+
+
 }
 
 
