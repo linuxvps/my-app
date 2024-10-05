@@ -2,7 +2,7 @@ import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {FormsModule} from '@angular/forms'; // Add this import
 import {CommonModule} from '@angular/common';
 import {CashPrediction,PredictionService} from '../../service/prediction/prediction.service';
-import {Chart, registerables} from 'chart.js';
+import {Chart, registerables} from 'chart.js/auto';
 import { catchError } from 'rxjs';
 
 @Component({
