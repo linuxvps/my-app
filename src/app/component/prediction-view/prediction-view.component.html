@@ -1,1 +1,26 @@
-<p>prediction-view works!</p>
+<div class="container">
+  <!-- Add text box and button to the middle of the page -->
+  <div class="centered-input">
+    <input type="number" [(ngModel)]="inputValue" min="1" max="100" placeholder="Enter a number between 1-100">
+    <button class="submit-button" (click)="onSubmit()">Submit</button>
+  </div>
+
+  <div style="display: block;">
+    <canvas id="cashPredictionChart"></canvas>
+  </div>
+
+  <h1 class="title">Cash Predictions</h1>
+  <ul class="predictions-list">
+    <li class="prediction-card" *ngFor="let prediction of predictions">
+      <div class="card-content">
+        <span class="label">Actual Cash:</span>
+        <span class="value">{{ prediction.actualCash }}</span>
+        <br>
+        <span class="label">Predicted Cash:</span>
+        <span class="value">{{ prediction.predictedCash }}</span>
+      </div>
+    </li>
+  </ul>
+
+
+</div>
