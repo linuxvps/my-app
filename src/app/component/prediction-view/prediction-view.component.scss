@@ -1,89 +1,149 @@
-// General container styling
+body {
+  background-color: #f7f7f7;
+}
+
+/* Container that holds everything */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  max-width: 800px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
 }
 
-// Centering input and button
-.centered-input {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-
-  input[type="number"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 200px;
-  }
-
-  .submit-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #45a049;
-    }
-  }
-}
-
-// Chart styling
-#cashPredictionChart {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 30px;
-}
-
-// Title styling
+/* Title styles */
 .title {
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 20px;
   color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
-// Predictions list and card styling
+/* Predictions list styles */
 .predictions-list {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
+  justify-content: center;
 }
 
+/* Prediction card (styled like a card) */
 .prediction-card {
   background-color: #f9f9f9;
   border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  flex: 1 1 calc(33% - 40px); /* Flex-grow, flex-shrink, and basis (33% width minus gap) */
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border: 1px solid #ddd;
+  min-width: 280px; /* Ensures minimum width for smaller screens */
+}
 
-  &:hover {
-    transform: translateY(-5px);
+/* Hover effect for the card */
+.prediction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card content styling */
+.card-content {
+  font-size: 1.2rem;
+  color: #444;
+  padding: 10px;
+}
+
+.label {
+  font-weight: bold;
+  color: #555;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.value {
+  color: #333;
+  font-size: 1.3rem;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* Image container */
+.image-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Image styling */
+.prediction-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.prediction-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+  .prediction-card {
+    flex: 1 1 calc(50% - 40px); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .prediction-card {
+    flex: 1 1 100%; /* 1 card per row */
+    max-width: 100%;
   }
 
   .card-content {
     font-size: 1rem;
-
-    .label {
-      font-weight: bold;
-      color: #555;
-    }
-
-    .value {
-      color: #333;
-    }
   }
+}
+.centered-input {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.centered-input input[type="number"] {
+  width: 240px;
+  height: 30px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.centered-input input[type="number"]::placeholder {
+  color: #666;
+  font-size: 14px;
+}
+
+.submit-button {
+  background-color: #4CAF50; /* green */
+  color: #ffffff;
+  padding: 4px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* add some margin to the left */
+}
+
+.submit-button:hover {
+  background-color: #3e8e41; /* darker green */
+}
+
+.submit-button:active {
+  background-color: #3e8e41; /* darker green */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
